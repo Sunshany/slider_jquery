@@ -1,0 +1,21 @@
+html {
+	background-color: #BADA55;
+}
+img {
+	width: 760px;
+	border-radius: 40px;
+}
+.main_content {
+	text-align: center;
+}
+h1 {
+	font-family: 'Lobster', Georgia, Times, serif;
+	font-size: 70px;
+	line-height: 100px;
+	text-align: center;
+}
+p {
+	font-family: 'Cabin', Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	line-height: 25px;
+}
