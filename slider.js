@@ -1,9 +1,9 @@
-const slidesCount = 5
+const slidesBase = Array(5).fill()
 const slideShow = $('.gallery ul')
 const baseUrl = 'pictures/spiderman_'
 
-slideShow.append(Array(slidesCount).fill().reduce(function (totalContent, _, i) {
-  return totalContent + '<li class="each"><img src="'
+slideShow.append(slidesBase.reduce(function (content, _, i) {
+  return content + '<li class="each"><img src="'
     + baseUrl + (i + 1) +'.jpg" /></li>'
 }, ''))
 
@@ -11,7 +11,19 @@ const allSlides = slideShow.find('li.each')
 const firstSlide = allSlides.first()
 const lastSlide = allSlides.last()
 
-firstSlide.addClass('active').show()
+function thumbnailClick(idx) {
+  const slide = allSlides[idx]
+
+  if (!slide.hasClass('active')) {
+    slideShow.find('li.active').removeClass('active')
+    slide.addClass('active')
+  }
+}
+
+$('#thumbnail-container').append(slidesBase.reduce(function (content, _, i) {
+  return content + '<a class="thumbnail" href="javascript:thumbnailClick('
+    + i +')"><img src="'+ baseUrl + (i + 1) +'.jpg" /></a>'
+}, ''))
 
 $('.direction-next').click(function() {
   const nextSlide = slideShow.find('li.active').next()
@@ -32,5 +44,7 @@ $('.direction-prev').click(function() {
     prevSlide.addClass('active')
   } else {
     lastSlide.addClass('active')
-  } 
+  }
 })
+
+firstSlide.addClass('active').show()
