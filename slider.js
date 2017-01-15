@@ -14,9 +14,9 @@ const lastSlide = allSlides.last()
 function thumbnailClick(idx) {
   const slide = allSlides[idx]
 
-  if (!slide.hasClass('active')) {
+  if (!slide.classList.contains('active')) {
     slideShow.find('li.active').removeClass('active')
-    slide.addClass('active')
+    slide.classList.add('active')
   }
 }
 
