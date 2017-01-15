@@ -1,15 +1,12 @@
-/* Import */
-@import url("http://fonts.googleapis.com/css?family=Lato");
-
 /* Basic Reset */
 * {  
-	font-smoothing: antialiased;
-	margin: 0;
-	padding: 0;
+  font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
 }
 body { 
-	background: #33322f; 
-	overflow-x: hidden; 
+  background: #33322f; 
+  overflow-x: hidden; 
 }
 
 /* Gallery */
@@ -22,9 +19,9 @@ body {
 	list-style: none;
 	border-radius: 20px;
 }
-.gallery img {
-	border-radius: 20px;  
+.gallery img { 
 	display: block; 
+	border-radius: 20px;
 	float: left; 
 }
 .gallery ul {
@@ -49,24 +46,24 @@ body {
 	opacity: 1; 
 }
 /* Direction */
-.direction { 
+.direction {
 	position: absolute; 
 	top: 50%;
-  	margin-top: -74px; 
-	right: -100px;
-	background: rgba(159, 21, 13, 0.88);
+ 	margin-top: -74px; 
+	background: rgba(184, 4, 11, 0.81);
 	width: 158px;
-  	height: 158px;
+ 	height: 158px;
 	display: block;
-	transform: rotate(45deg); 
-  	z-index: 9999;
+	transform: rotate(45deg);
+	border-radius: 40px;
+ 	z-index: 9999;
   	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+	cursor: pointer;
 }
-.direction .next {
+
+.direction span {
 	position: absolute;
-	color: black;
-	top: 90px;
-  	left: 25px;
+  	color: black;
 	font: 40px "Lato", sans-serif;
 	text-shadow:
 		0 1px rgba(0,0,0,0.2),
@@ -75,7 +72,22 @@ body {
 		0 4px rgba(0,0,0,0.2),
 		0 5px rgba(0,0,0,0.2);
 	transform: rotate(-45deg);
-	cursor: pointer;
+}
+
+.direction-next { 
+	right: -100px;
+}
+
+.direction-next span {
+	top: 90px;
+  	left: 25px;
+}
+.direction-prev {
+	left: -100px;
+}
+.direction-prev span {
+	top: 20px;
+  	right: 35px;
 }
 h1 {
 	font-family: 'Lobster', Georgia, Times, serif;
