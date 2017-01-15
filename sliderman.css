@@ -103,7 +103,10 @@ p {
 	line-height: 25px;
 }
 #thumbnail-container img {
-	display: flex;
-	padding: 10px;
-	width: 200px;
+	margin: auto;
+	text-align: center;
+	padding: 5px;
+	width: 100px;
+	border-radius: 20px;
+	box-shadow: 2px 2px 2px #000;
 }
