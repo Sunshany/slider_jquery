@@ -1,36 +1,89 @@
-html {
-	background-color: #BADA55;
+/* Import */
+@import url("http://fonts.googleapis.com/css?family=Lato");
+
+/* Basic Reset */
+* {  
+	font-smoothing: antialiased;
+	margin: 0;
+	padding: 0;
 }
-.my-slider img {
+body { 
+	background: #33322f; 
+	overflow-x: hidden; 
+}
+
+/* Gallery */
+.gallery { 
+	position: relative; 
+	width: 490px;
+  	height: 306px; 
+	margin: auto; 
+	overflow: hidden; 
+	list-style: none;
+	border-radius: 20px;
+}
+.gallery img {
+	border-radius: 20px;  
+	display: block; 
+	float: left; 
+}
+.gallery ul {
+	list-style: none;
+}
+.gallery ul li.each { 
+	position: relative; 
+	float: left;
+	transition: all .8s; 
+}
+.gallery ul li.each, .gallery ul li.each img { 
+	height: 0px; 
+}
+.gallery ul li.each img { 
+	opacity: 0.5; 
+	transition: all .4s; 
+}
+.gallery ul li.each.active, .gallery ul li.each.active img { 
+	height: 306px; 
+}
+.gallery ul li.each.active img { 
+	opacity: 1; 
+}
+/* Direction */
+.direction { 
+	position: absolute; 
+	top: 50%;
+  	margin-top: -74px; 
+	right: -100px;
+	background: rgba(159, 21, 13, 0.88);
+	width: 158px;
+  	height: 158px;
 	display: block;
-	float: left;
-	width: 760px;
-	/*height: 500px;	*/
+	transform: rotate(45deg); 
+  	z-index: 9999;
+  	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
 }
-.my-slider {
-	width: 760px;
-	height: 500px;
-	position: relative;
-	margin: auto;
-	overflow: hidden;
-	list-style: none;
-}
-.my-slider ul {
-	list-style: none;
-}
-.my-slider ul li.main_content {
-	position: relative;
-	float: left;
-	transition: all .8s;
-}
-.main_content {
-	text-align: center;
+.direction .next {
+	position: absolute;
+	color: black;
+	top: 90px;
+  	left: 25px;
+	font: 40px "Lato", sans-serif;
+	text-shadow:
+		0 1px rgba(0,0,0,0.2),
+		0 2px rgba(0,0,0,0.2),
+		0 3px rgba(0,0,0,0.2),
+		0 4px rgba(0,0,0,0.2),
+		0 5px rgba(0,0,0,0.2);
+	transform: rotate(-45deg);
+	cursor: pointer;
 }
 h1 {
 	font-family: 'Lobster', Georgia, Times, serif;
 	font-size: 70px;
 	line-height: 100px;
 	text-align: center;
+	margin-bottom: 40px;
+	margin-top: 40px;
 }
 p {
 	font-family: 'Cabin', Helvetica, Arial, sans-serif;
